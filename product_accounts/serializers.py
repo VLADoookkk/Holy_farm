@@ -3,6 +3,14 @@ from rest_framework import serializers
 from .models import Category, Product
 
 
+# добавление аккаунтов в сужествующий продукт. в урлах во айдишнику
+class AddingAccountsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Product
+        fields = '__all__'
+        read_only_fields = ('account_file',)  # Делаем поле account_file только для чтения
+
+
 # получение продукта
 class ProductListSerializer(serializers.ModelSerializer):
     class Meta:
@@ -19,7 +27,7 @@ class CategorySerializer(serializers.ModelSerializer):
 
 
 # создание продукта
-class ProductSerializer(serializers.ModelSerializer):
+class ProductCreatSerializer(serializers.ModelSerializer):
     account_file = serializers.FileField(write_only=True)
 
     class Meta:
