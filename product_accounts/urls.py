@@ -1,5 +1,6 @@
 from django.urls import path
-from .views import CategoryCreateView, ProductCreateView, CategoryListView, ProductListView, AddingAccounts
+from .views import CategoryCreateView, ProductCreateView, CategoryListView, ProductListView, AddingAccounts, \
+    ChangingProductAfterPurchase
 
 urlpatterns = [
     path('v1/categorycreate/', CategoryCreateView.as_view(), name='category-create'),
@@ -7,5 +8,7 @@ urlpatterns = [
     path('v1/categorylist/', CategoryListView.as_view(), name='category-list'),
     path('v1/productlist/', ProductListView.as_view(), name='product-list'),
     path('v1/addingaccounts/<int:pk>/', AddingAccounts.as_view(), name='adding-accounts'),
+    path('v1/changingproductafterpurchase/<int:pk>/', ChangingProductAfterPurchase.as_view(),
+         name='changing-product-after-purchase'),
     # path('v1/updateaccountfile/', UpdateAccountFileView.as_view(), name='update-account-file'),
 ]
