@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'customuser',
-    'djangorestframework_simplejwt',
+    'rest_framework_simplejwt',
     'rest_framework.authtoken',
 ]
 
